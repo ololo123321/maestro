@@ -1,0 +1,6 @@
+./model_data/*
+*.ipynb_checkpoints*
+.idea/*
+*.pyc
+./TF1/models/*
+./TF2/models/*
