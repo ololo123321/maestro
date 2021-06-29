@@ -1,3 +1,5 @@
+Генератор классической музыки, обученный на следующем датасете: https://magenta.tensorflow.org/datasets/maestro
+
 Структура проекта:
 
 maestro
