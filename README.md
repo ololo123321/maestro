@@ -1,36 +1,36 @@
 Структура проекта:
 
 maestro
---maestro-v2.0.0  // распакованный архив с midi-файлами
---model_data
-----v1  // без токенов педали
-------train_tokens.json  // List[List[str]] - токены событий 
-------test_tokens.json
-------eval_tokens.json
-------vocab.json  // List[str] - словарь токенов
-----v2  // с токенами педали; структура как в v1
---TF1  // реализация проекта на TF 1.14
-----midi  // сгенерированные файлы
-------dpa_4l_8h_64hd_512dff  // названия соответствуют названиям в models
---------0_init.mid  // {индекс}_{init-начальная последовательность, sample-продолжение модели}.mid
---------0_sample.mid
---------...
-------ra_4l_8h_64hd_512dff
-------lstm_3l_256h
-----models
-------dpa_4l_8h_64hd_512dff  // multi-head dot-product attention: [4]
-------ra_4l_8h_64hd_512dff  // relative attention: [3]
-------lstm_3l_256h  // stacked lstm
-----dot_product_attention.ipynb
-----recurrent.ipynb
-----relative_attention.ipynb
-----generation.ipynb  // код для генерации
-----maestro.py  // основной код
---TF2  // реализация проекта на TF 2.0.0; структура как в TF1, только переделаны наиболее удачные модели
---preprocessing.ipynb  // maestro-v2.0.0 -> model_data
---utils.py  // обработка данных
---review  // обзор статьи
---README
+--maestro-v2.0.0  // распакованный архив с midi-файлами  
+--model_data  
+----v1  // без токенов педали  
+------train_tokens.json  // List[List[str]] - токены событий   
+------test_tokens.json  
+------eval_tokens.json  
+------vocab.json  // List[str] - словарь токенов  
+----v2  // с токенами педали; структура как в v1    
+--TF1  // реализация проекта на TF 1.14    
+----midi  // сгенерированные файлы    
+------dpa_4l_8h_64hd_512dff  // названия соответствуют названиям в models    
+--------0_init.mid  // {индекс}_{init-начальная последовательность, sample-продолжение модели}.mid   
+--------0_sample.mid   
+--------...  
+------ra_4l_8h_64hd_512dff  
+------lstm_3l_256h  
+----models  
+------dpa_4l_8h_64hd_512dff  // multi-head dot-product attention: [4]  
+------ra_4l_8h_64hd_512dff  // relative attention: [3]  
+------lstm_3l_256h  // stacked lstm  
+----dot_product_attention.ipynb  
+----recurrent.ipynb  
+----relative_attention.ipynb  
+----generation.ipynb  // код для генерации  
+----maestro.py  // основной код  
+--TF2  // реализация проекта на TF 2.0.0; структура как в TF1, только переделаны наиболее удачные модели  
+--preprocessing.ipynb  // maestro-v2.0.0 -> model_data  
+--utils.py  // обработка данных  
+--review  // обзор статьи  
+--README  
 
 Краткое описание подхода и результатов:
 1. Препроцессинг
